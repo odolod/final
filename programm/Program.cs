@@ -11,7 +11,7 @@ string PrintArray(string[] array)
     for (int i = 0; i < array.Length; i++)
     {
         res = res + array[i];
-        if (i < array.Length-1)
+        if (i < array.Length - 1)
         {
             res = res + "; ";
         }
@@ -25,10 +25,13 @@ string PrintArray3(string[] array)
     string res = "[";
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length < 4) res = res + array[i];
-        if (i < array.Length-1)
+        if (array[i].Length < 4)
         {
-            res = res + "; ";
+            res = res + array[i];
+            if (i < array.Length - 1)
+            {
+                res = res + "; ";
+            }
         }
     }
     res = res + "]";
@@ -41,7 +44,7 @@ string[] array = new string[size];
 Console.WriteLine("Введите массив строк:");
 for (int i = 0; i < size; i++)
 {
-    int index = i+1;
+    int index = i + 1;
     Console.Write("Введите " + index + "-ю строку массива:");
     array[i] = Console.ReadLine();
 }
